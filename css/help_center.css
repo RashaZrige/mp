@@ -1,0 +1,339 @@
+ .tb-inner{
+      max-width:1200px; margin:0 auto;
+      padding:18px 24px;
+      display:grid; grid-template-columns:auto 1fr auto;
+      align-items:center; gap:18px;
+    }
+    .tb-left{ display:flex; align-items:center; gap:50px; }
+    .icon-btn{
+      width:40px; height:40px; display:grid; place-items:center;
+      border:none; background:transparent; box-shadow:none; cursor:pointer;
+    }
+    .icon-btn i{ font-size:18px; color:#6b7280; }
+    .brand{ display:flex; align-items:center; gap:10px; }
+    .brand-logo{ width:150px; height:auto; object-fit:contain; }
+
+    .tb-center{ display:flex; justify-content:center; }
+    .search-wrap{ position:relative; width:min(680px,90%); margin-left:90px; }
+    .search-wrap input{
+      width:500px; height:48px; padding:0 16px 0 44px;
+      border:1px solid #cfd7e3; border-radius:12px; font-size:16px; background:#fff; outline:none;
+    }
+    .search-wrap input::placeholder{ color:#9aa4b2; }
+    .search-wrap i{
+      position:absolute; left:14px; top:50%; transform:translateY(-50%);
+      color:#8a94a6; font-size:18px;
+    }
+
+    .tb-right{ display:flex; align-items:center; gap:35px; }
+    .notif-pill{
+      width:42px; height:42px; display:grid; place-items:center;
+      border:1px solid #dfe6ef; background:#fff; border-radius:50%; cursor:pointer;
+    }
+    .notif-pill i{ font-size:18px; color:#1e73ff; }
+    .profile-trigger{
+      display:flex; align-items:center; gap:10px;
+      background:#fff; border:1px solid #e5e7eb;
+      padding:6px 12px; border-radius:40px; cursor:pointer;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+    }
+    .avatar{ width:48px; height:48px; object-fit:cover; border-radius:50%; display:block }
+    .chev{ color:#64748b; transition:transform .18s ease }
+
+  
+
+
+      .profile-menu{ position:relative }
+.profile-trigger{
+  display:flex; align-items:center; gap:10px;
+  background:#fff; border:1px solid var(--border);
+  padding:6px 12px; border-radius:40px; cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.avatar{ width:48px; height:48px; object-fit:cover; border-radius:50%; display:block }
+.chev{ color:#64748b; transition:transform .18s ease }
+.profile-menu.open .chev{ transform:rotate(180deg) }
+.menu-card{
+  position:absolute; right:0; top:calc(100% + 10px); z-index:9999; width:280px;
+  background:#fff; border:1px solid var(--border);
+  border-radius:18px; box-shadow:0 12px 30px rgba(0,0,0,.12);
+  padding:12px; overflow:auto; max-height:80vh;
+}
+.menu-item{
+  width:100%; display:flex; align-items:center; gap:12px;
+  padding:12px; border-radius:14px; color:#0f172a; text-decoration:none;
+  font-weight:600; background:#fff; border:0; cursor:pointer;
+}
+.menu-item:hover{ background:#f8fafc }
+.menu-item.danger {
+  color:#dc2626;
+  display:flex;
+  align-items:center;
+  gap:160px;              /* ✨ مسافة صغيرة بين النص والأيقونة */
+  /* justify-content:flex-start;  */
+}
+.divider{ border:0; height:1px; background:var(--border); margin:4px 0 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* السايدبار: مخفي افتراضياً ويحضر من اليسار */
+.sidebar{
+  position: fixed; top:0; left:0;
+  width:260px; height:100%;
+  background:#fff;
+  border-right:1px solid #e5e7eb;
+  box-shadow:4px 0 15px rgba(0,0,0,.08);
+  padding:20px;
+  transform:translateX(-100%);
+  transition:transform .3s ease;
+  z-index:1000;
+  display:flex; flex-direction:column;
+}
+.sidebar.open{ transform:translateX(0); }
+
+/* يدزّ المحتوى يمين بالديسكتوب */
+.main-content{ transition:margin-left .3s ease; }
+@media (min-width:900px){
+  body.sidebar-open .main-content{ margin-left:260px; }
+  .sidebar-backdrop{ display:none !important; }
+}
+
+/* بالموبايل يطلع Overlay مع خلفية */
+@media (max-width:899px){
+  .sidebar{ z-index:2000; }
+  .sidebar-backdrop{
+    position:fixed; inset:0;
+    background:rgba(0,0,0,.45);
+    display:none; z-index:1500;
+  }
+  .sidebar-backdrop.show{ display:block; }
+}
+
+/* تنسيقاتك الداخلية (محافظين عليها) */
+.sidebar h3{ margin:0 0 12px; font:800 18px/1 ui-sans-serif; color:#0f172a; }
+.sidebar ul{ list-style:none; margin:8px 0 0; padding:0; }
+.sidebar li{ margin-bottom:16px; }
+.sidebar a{
+  display:flex; align-items:center; gap:12px;
+  text-decoration:none; font-size:15px; font-weight:600; color:#111827;
+  padding:8px 12px; border-radius:10px; transition:background .2s;
+}
+.sidebar a:hover{ background:#f3f4f6; color:#1e73ff; }
+.sidebar a.active{ background:#1e73ff; color:#fff; }
+
+.sidebar-profile{
+  margin-top:auto; margin-bottom:20px;
+  display:flex; align-items:center; gap:12px;
+  padding:12px 10px; border-radius:10px; cursor:pointer;
+  transition:background .2s;
+}
+.sidebar-profile:hover{ background:#f3f4f6; }
+.sidebar-profile img{ width:44px; height:44px; border-radius:50%; object-fit:cover; }
+.sidebar-profile .profile-info{ display:flex; flex-direction:column; }
+.sidebar-profile .name{ font-size:15px; font-weight:600; color:#111827; }
+.sidebar-profile .role{ font-size:13px; color:#6b7280; }
+
+.sidebar-close{
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #374151;
+  cursor: pointer;
+  margin-left: auto;    /* يخليه على اليمين */
+  margin-bottom: 10px;
+  display: block;
+}
+.sidebar-close:hover{
+  color: #1e73ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ===== خارج الكارد ===== */
+  .faq-header-wrap{padding:24px 0 6px}
+  .faq-header{max-width:1000px;margin:0 auto;padding:0 2px}
+  .faq-title{margin:0 0 6px;font-size:32px;color:#0f172a;letter-spacing:.2px}
+  .faq-sub{margin:0 0 14px;color:#64748b}
+
+  /* ===== الكارد الأبيض ===== */
+  .faq-wrap{padding:12px 0 48px}
+  .faq-card{
+    max-width:1000px;margin:0 auto;padding:28px;
+    background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 10px 24px rgba(0,0,0,.06)
+  }
+  .faq-section-title{margin:4px 0 16px;font-size:22px;color:#0f172a}
+  .faq-list{display:flex;flex-direction:column;gap:12px}
+
+  .faq-item{border:1px solid #eef2f7;border-radius:14px;overflow:hidden;background:#fff}
+  .faq-q{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:16px 18px;
+    background:#fff;
+    border:0;
+    cursor:pointer;
+    text-align:left;
+    font-weight:600;
+    color:#0f172a
+  }
+  .faq-icon{
+    width:28px;
+    height:28px;
+    display:grid;
+    place-items:center;
+    border:1px solid #e5e7eb;
+    border-radius:999px;
+    color:#6b7280;
+    font-weight:400;
+    flex:0 0 28px;
+    font-size:20px; /* حجم الخط جواها */
+
+  }
+
+/* لما تفتح السؤال */
+.faq-item.open .faq-icon{
+  color:#2563eb;          /* الأزرق */
+  border-color:#93c5fd;   /* أزرق فاتح للحدود */
+}
+  .faq-a{display:none;padding:0 18px 16px 58px;color:#374151}
+  .faq-item.open .faq-a{display:block}
+
+
+
+
+
+
+
+
+
+:root{
+  --container-w: 980px;     /* عرض الحاوية العام */
+  --card-w: 1000px;          /* عرض الكارد (مطابق للمرجع) */
+  --radius: 12px;
+  --border: 1px solid #E5E7EB;
+  --shadow: 0 2px 14px rgba(16,24,40,0.06);
+  --blue: #1E88E5;          /* لون زر الإرسال */
+  --text: #111827;
+  --muted: #6B7280;
+}
+
+*{box-sizing:border-box}
+body{font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif}
+
+
+.contact-container{
+  max-width: 1000px;     /* نفس القيمة بالضبط */
+  margin: 18px auto 0;   /* بالوسط وتحته مباشرة */
+  padding: 0 2px;        /* نفس الـ padding تبع .faq-header */
+}
+
+/* خليه نفس شكل الكارد بالأعلى */
+.contact-card{
+  width: 100%;
+  max-width: 1000px;               /* مهم جدًا */
+  margin: 0 auto;                  /* وسط */
+  padding: 28px;                   /* نفس الـ FAQ */
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;             /* نفس الزوايا */
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);  /* نفس الظل */
+  box-sizing: border-box;
+}
+
+.contact-title{
+  margin:0 0 16px 0;
+  font-size:22px; font-weight:700; color:#1F2937;
+}
+
+.field-label{
+  display:block;
+   margin:12px 0 8px;
+    font-size:14px;
+     color:#374151;
+}
+.field-label span{ color: var(--muted); margin-left:6px; }
+
+/* حقل الإيميل مع الأيقونة */
+.input-with-icon{ position:relative; width:420px; } /* نفس عرض الحقل في المرجع */
+.input-with-icon input{
+  width:100%; height:52px; border-radius:10px;
+  border:1px solid #D1D5DB; padding:0 14px 0 42px;
+  font-size:14.5px; color:var(--text);
+}
+.input-with-icon input::placeholder{ color:#A7AFB7; }
+.input-with-icon input:focus{
+  outline:3px solid rgba(30,136,229,0.18); border-color:#1E88E5;
+}
+.mail-icon{
+  position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  width:20px; height:20px; fill:#9CA3AF; pointer-events:none;
+}
+
+/* مربع النص */
+#help{
+  width:70%; 
+  min-height:170px; 
+  resize:vertical;
+  border-radius:10px;
+   border:1px solid #D1D5DB; 
+   padding:14px;
+  font-size:14.5px;
+   color:var(--text);
+    margin-top:8px;
+}
+#help::placeholder{ color:#A7AFB7; }
+#help:focus{ outline:3px solid rgba(30,136,229,0.18); border-color:#1E88E5; }
+
+/* زر الإرسال بمحاذاة اليمين */
+.actions{ display:flex; justify-content:flex-end; margin-top:16px; }
+.btn-primary{
+  height:44px; min-width:150px; padding:0 22px; border-radius:10px;
+  border:none; cursor:pointer; background:var(--blue); color:#fff;
+  font-weight:600; font-size:15px; box-shadow:0 2px 8px rgba(30,136,229,0.35);
+}
+.btn-primary:hover{ filter:brightness(1.05); }
+.btn-primary:active{ transform:translateY(1px); }

@@ -1,0 +1,153 @@
+
+:root{
+  --bg:#f5f7fb; --card:#fff; --stroke:#e6edf6; --text:#000000; --muted:#374151;
+  --blue:#1e73ff; --blue-700:#1667d8; --green:#10b981;
+}
+/* Base */
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+  color: var(--text);
+  background: url("../image/photo_2025-08-26_12-08-45.jpg") center/cover no-repeat fixed;
+}
+
+/* Shell */
+.page{ min-height:100svh; display:grid; place-items:center; padding:28px 16px }
+.card{
+  width: min(960px, 96vw);
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.08);
+  border:1px solid var(--stroke);
+  background: #fff;
+}
+
+/* Title + stepper */
+.card-title{ text-align:center; padding:24px 22px 10px; }
+.card-title h1{ margin:0 0 18px; font-size:20px }
+.steps{
+  list-style:none; padding:0; margin:0 auto; max-width:760px;
+  display:flex; align-items:center; justify-content:space-between; position:relative;
+}
+.steps::before{
+  content:""; position:absolute; top:26px; left:90px; right:90px;
+  height:2px; background:#e5e7eb;
+}
+.step{ width:140px; text-align:center; color:var(--muted); position:relative }
+.step .dot{
+  width:36px; height:36px; border-radius:999px;
+  display:grid; place-items:center; margin:0 auto 6px;
+  font-weight:700; background:#eff3fb; color:#6b7aa6; border:1px solid var(--stroke);
+}
+.step small{ display:block; font-size:12px }
+.step.is-active{ color:var(--text) }
+.step.is-active .dot{ background:var(--blue); color:#fff; border-color:var(--blue) }
+.step.is-done{ color:#065f46 }
+.step.is-done .dot{ background:var(--green); color:#fff; border-color:var(--green) }
+
+/* Layout */
+.body.grid{
+  display:grid; grid-template-columns: 1.6fr 1fr; gap:28px; padding: 16px 24px 8px;
+}
+.left{ 
+    padding-right:40px;
+     border-right:1px solid #d1d5db 
+    }
+.right{ padding-left:18px; display:flex; flex-direction:column; gap:16px }
+
+/* Fields */
+.section-title{ font-size:20px; margin:6px 0 16px }
+.field{ margin:0 0 16px }
+label{ display:block; font-size:12px; color:#111827; margin:0 0 8px }
+input,select,textarea{
+  width:100%; font-size:15px; background:#fff; color:#111827;
+  border:1px solid #d1d5db; border-radius:10px; outline:0; transition:border-color .15s, box-shadow .15s;
+}
+input,select{ height:44px; padding:10px 14px }
+textarea{ padding:12px 14px; resize:vertical; min-height:110px }
+input:focus,select:focus,textarea:focus{ border-color:var(--blue); box-shadow:0 0 0 3px rgba(30,115,255,.15) }
+
+/* Rows */
+.row{ display:grid; grid-template-columns:1fr 1fr; gap:14px }
+
+/* Prefix */
+.with-prefix{ position:relative }
+.prefix{
+  position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  color:#9aa3af; font-size:14px; display:inline-flex; align-items:center; gap:6px;
+}
+.with-prefix input{ padding-left:36px }
+
+/* Upload */
+.mini-title{ font-size:14px; margin:6px 0 8px; color:#374151 }
+.upload-box{
+  width:100%; height:240px; border:2px dashed #9aa3af; border-radius:12px;
+  background:#f8fafc; display:grid; place-items:center; cursor:pointer; overflow:hidden;
+  transition:border-color .15s, background .15s, transform .1s;
+}
+.upload-box:hover{ border-color:#1e73ff; background:#f1f5ff; transform:translateY(-1px) }
+.upload-box img{ width:100%; height:100%; object-fit:cover; display:block }
+.upload-hint{ text-align:center; color:#8a96a8 }
+.upload-hint i{ font-size:26px; margin-bottom:6px }
+.upload-hint small{ display:block; margin-top:4px }
+
+/* Description same width as image and slightly taller */
+.tall-like-upload{
+  min-height:160px;   /* أطول شوي من الصورة */
+  border:1px solid #d1d5db; 
+  border-radius:10px;
+}
+
+/* Actions centered */
+.actions.actions-center{
+  grid-column:1 / -1; display:flex; justify-content:center; gap:16px; margin: 18px 0 20px;
+}
+
+/* يخلي شريط الأزرار تحت العمودين وبالمنتصف */
+.actions.actions-center{
+  grid-column: 1 / -1;          /* تمتد تحت العمودين */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 12px 0 20px;
+}
+
+/* اضبطي مقاس الأزرار */
+.actions .btn{                   /* مهم: يمنعها تاخد عرض 100% بالـdesktop */
+  width: auto;
+  height: 44px;
+  min-width: 160px;
+  padding: 0 18px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn.prev{ background:#9aa3b2; color:#fff; }
+.btn.next{
+  background: linear-gradient(180deg,#28a0ff 0%, #1e73ff 100%);
+  color:#fff;
+  box-shadow: 0 10px 18px rgba(30,115,255,.25);
+}
+.btn.next:hover{ background: linear-gradient(180deg,#2596ff 0%, #1667d8 100%); }
+
+/* بس على الموبايل خليه بعرض كامل */
+@media (max-width: 980px){
+  .actions .btn{ width: 100%; min-width: 0; }
+}
+
+
+/* Mobile */
+@media (max-width:980px){
+  .steps::before{ left:24px; right:24px }
+  .body.grid{ grid-template-columns:1fr; padding:14px }
+  .left{ border-right:0; padding-right:0 }
+  .right{ padding-left:0 }
+  .row{ grid-template-columns:1fr }
+  .actions.actions-center{ flex-direction:column }
+  .btn{ width:100%; min-width:0 }
+}

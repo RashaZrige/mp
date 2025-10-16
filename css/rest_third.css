@@ -1,0 +1,149 @@
+:root{
+  --blue:#1e73ff;
+  --blue-700:#1667d8;
+  --stroke:#dbe3ee;
+  --text:#111827;
+  --muted:#6b7280;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background:url("../image/photo_2025-08-26_12-08-45.jpg") center/cover no-repeat fixed;
+  color:var(--text);
+}
+
+/* الغلاف */
+.page-wrap{
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  padding:28px 16px;
+}
+
+/* الكارد عمودين */
+.verify-card{
+  width:min(1100px,96vw);
+  min-height:620px;
+  display:grid;
+  grid-template-columns: 1.05fr 1fr;
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(0,0,0,.12),
+             inset -6px 0 80px rgba(30,115,255,.06);
+}
+
+/* اليسار */
+.left-panel{
+  position:relative;
+  background:url("../image/photo_2025-08-26_11-56-22.jpg") center/cover no-repeat;
+  display:flex; align-items:center;
+  padding:40px; color:#fff;
+}
+.left-inner{max-width:420px}
+.brand-mark{width:220px; height:auto; object-fit:contain; display:block; margin:0 0 6px}
+.left-title{margin:0 0 10px; font-size:28px; font-weight:800}
+.left-sub{margin:0; font-size:18px; line-height:1.7; opacity:.95}
+
+/* اليمين */
+.verify-box{
+  position:relative;
+  padding:56px 32px 32px;
+  margin:22px;
+  display:flex; flex-direction:column; gap:16px;
+}
+
+/* هيدر مصغّر داخل الصندوق */
+.v-head{
+  position:absolute; top:12px; left:16px; right:16px;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:12px; color:#6b7480;
+}
+.back{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:14px; font-weight:600; color:#111; text-decoration:none;
+}
+.back i{
+  font-size:16px; color:var(--blue);
+  width:28px; height:28px; display:inline-grid; place-items:center;
+  border-radius:999px; background:rgba(30,115,255,.10);
+  box-shadow:0 1px 2px rgba(0,0,0,.04) inset;
+}
+.back:hover i{ background:rgba(30,115,255,.16) }
+.step{display:flex; flex-direction:column; align-items:center; line-height:1.2}
+.step .step-text{font-size:16px; font-weight:700; color:#111}
+.step a{color:var(--blue); text-decoration:none}
+.step a:hover{text-decoration:underline}
+
+/* العناوين */
+.v-title{font-size:30px; font-weight:800; margin:8px 0 4px}
+.v-desc{margin:0 0 10px; font-size:16px; color:#4b5563}
+
+/* الحقول */
+.form-box{max-width:520px}
+.field{
+  position:relative; display:block;
+  margin:14px 0;
+}
+.field-label{
+  display:block; margin:0 0 6px; font-weight:700; font-size:14px; color:#374151
+}
+.field-icon{
+  position:absolute;
+   left:12px;
+ top:65%; 
+ transform:translateY(-50%);
+ color:#9ca3af;
+ pointer-events:none;
+}
+.field input{
+  width:100%; height:48px;
+  border:1px solid var(--stroke);
+  border-radius:12px;
+  padding:0 14px 0 38px;   /* مساحة للأيقونة */
+  font-size:15px; outline:0; background:#fff;
+}
+.field input:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(30,115,255,.15);
+}
+
+/* شروط الباسورد */
+.rules{list-style:none; padding:6px 0 0; margin:4px 0 10px; font-size:14px}
+.rules li{margin:6px 0}
+.rules .ok{color:#10b981}
+.rules .err{color:#dc2626}
+
+.rules li.ok {
+  color: green;
+}
+.rules li.err {
+  color: red;
+}
+
+/* الزر – عريض وكبير */
+.btn-primary{
+  width:100%;
+  height:50px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(180deg,#28a0ff 0%, #1e73ff 100%);
+  color:#fff;
+  font-size:17px; font-weight:700;
+  cursor:pointer; text-align:center; text-decoration:none;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 18px rgba(30,115,255,.25);
+  transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn-primary:hover{ transform:translateY(-2px); background:linear-gradient(180deg,#2596ff 0%, #1667d8 100%) }
+.btn-primary:active{ transform:translateY(0); filter:saturate(1.1) }
+
+/* استجابة */
+@media (max-width: 920px){
+  .verify-card{ grid-template-columns:1fr }
+  .left-panel{ min-height:260px }
+  .verify-box{ margin:16px }
+}

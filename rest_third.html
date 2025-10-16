@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reset Password • Fixora</title>
+  <link rel="stylesheet" href="css/rest_third.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <main class="page-wrap">
+    <section class="verify-card">
+      
+      <!-- Left panel -->
+      <aside class="left-panel">
+        <div class="left-inner">
+          <img class="brand-mark" src="image/home-logo.png" alt="Fixora logo">
+          <h2 class="left-title">Create New Password</h2>
+          <p class="left-sub">
+            Enter a new password to secure your account and complete the reset process.
+          </p>
+        </div>
+      </aside>
+      
+      <!-- Right panel -->
+      <div class="verify-box">
+        <header class="v-head">
+          <a class="back" href="verify.html"><i class="fa-solid fa-arrow-left"></i> Back</a>
+          <span class="step">
+            <span class="step-text">Step 3 of 3</span>
+            <a href="rest_start.html">Reset password</a>
+          </span>
+        </header>
+
+        <h3 class="v-title">New Password</h3>
+        <p class="v-desc">Enter the new password for your account</p>
+         
+       <form action="php/rest-third.php" method="post" class="form-box" autocomplete="off">
+        <!-- Password field -->
+        <label class="field">
+          <span class="field-label">Password</span>
+          <span class="field-icon"><i class="fa-solid fa-lock"></i></span>
+          <!-- <input type="password" placeholder="Create password" /> -->
+             <input type="password" name="password" required>
+        </label>
+
+        <!-- Confirm password field -->
+        <label class="field">
+          <span class="field-label">Confirm password</span>
+          <span class="field-icon"><i class="fa-solid fa-lock"></i></span>
+          <!-- <input type="password" placeholder="Confirm password" /> -->
+            <input type="password" name="password_confirm" required>
+        </label>
+
+        <!-- Password rules -->
+        <!-- <ul class="rules">
+          <li class="ok"> ✅ Password must between 8 to 32 characters</li>
+          <li class="ok"> ✅  Must contain uppercase character</li>
+          <li class="ok"> ✅  Must contain a Number</li>
+        <li class="err">❌ Must contain a special character</li>
+        </ul> -->
+        
+
+        <!-- Password rules -->
+<ul class="rules">
+  <li id="len" class="err">❌ Password must be between 8 to 32 characters</li>
+  <li id="upper" class="err">❌ Must contain uppercase character</li>
+  <li id="num" class="err">❌ Must contain a Number</li>
+  <li id="special" class="err">❌ Must contain a special character</li>
+</ul>
+
+<script>
+const passInput = document.querySelector('input[name="password"]');
+
+// عناصر القوانين
+const lenRule     = document.getElementById('len');
+const upperRule   = document.getElementById('upper');
+const numRule     = document.getElementById('num');
+const specialRule = document.getElementById('special');
+
+// تابع التحقق
+passInput.addEventListener('input', () => {
+  const val = passInput.value;
+
+  // الطول
+  if (val.length >= 8 && val.length <= 32) {
+    lenRule.textContent = "✅ Password between 8 to 32 characters";
+    lenRule.className = "ok";
+  } else {
+    lenRule.textContent = "❌ Password must be between 8 to 32 characters";
+    lenRule.className = "err";
+  }
+
+  // حرف كابتل
+  if (/[A-Z]/.test(val)) {
+    upperRule.textContent = "✅ Contains uppercase character";
+    upperRule.className = "ok";
+  } else {
+    upperRule.textContent = "❌ Must contain uppercase character";
+    upperRule.className = "err";
+  }
+
+  // رقم
+  if (/\d/.test(val)) {
+    numRule.textContent = "✅ Contains a number";
+    numRule.className = "ok";
+  } else {
+    numRule.textContent = "❌ Must contain a number";
+    numRule.className = "err";
+  }
+
+  // رمز خاص
+  if (/[^A-Za-z0-9]/.test(val)) {
+    specialRule.textContent = "✅ Contains a special character";
+    specialRule.className = "ok";
+  } else {
+    specialRule.textContent = "❌ Must contain a special character";
+    specialRule.className = "err";
+  }
+});
+</script>
+
+
+
+        <button class="btn-primary" type="submit">Reset Password</button>
+      </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

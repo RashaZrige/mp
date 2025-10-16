@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verify • Fixora</title>
+  <link rel="stylesheet" href="css/verify.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- يفضّل defer لملف JS إن وُجد -->
+  <script src="js/verify.js" defer></script>
+</head>
+<body>
+
+  <main class="page-wrap">
+    <section class="verify-card">
+      <!-- Left panel (image + text) -->
+      <aside class="left-panel">
+        <div class="left-inner">
+          <img class="brand-mark" src="image/home-logo.png" alt="Fixora logo">
+          <h2 class="left-title">Confirm Your Phone Number</h2>
+          <p class="left-sub">
+            Enter the verification code we sent to your mobile number
+            to complete the signup process.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Right panel (form) -->
+      <div class="verify-box">
+        <header class="v-head">
+          <a class="back" href="register.html">
+            <i class="fa-solid fa-arrow-left"></i> Back
+          </a>
+          <span class="step">
+            <span class="step-text">Step 2 of 2</span>
+            <a href="#">Signup</a>
+          </span>
+        </header>
+
+        <h3 class="v-title">Check Your SMS</h3>
+        <p class="v-desc">
+          Enter the 6-digit code we sent to your mobile number 97••••••••• to
+          reset your password.
+        </p>
+
+        <!-- ✅ لازم POST + أسماء حقول d1..d6 + زر submit داخل الفورم -->
+        <form class="otp" action="php/verify.php" method="post" autocomplete="one-time-code">
+        <div class="otp-inputs">
+    <input name="d1" type="text" inputmode="numeric" maxlength="1" required>
+    <input name="d2" type="text" inputmode="numeric" maxlength="1" required>
+    <input name="d3" type="text" inputmode="numeric" maxlength="1" required>
+    <input name="d4" type="text" inputmode="numeric" maxlength="1" required>
+    <input name="d5" type="text" inputmode="numeric" maxlength="1" required>
+    <input name="d6" type="text" inputmode="numeric" maxlength="1" required>
+  </div>
+
+  <button class="btn-primary" type="submit">Verify</button>
+</form>
+       
+
+        <div class="v-foot">
+          Didn’t receive a code?
+          <!-- ✅ إعادة الإرسال تمر على verify.php مع ?resend=1 -->
+          <a href="php/verify.php?resend=1">Resend code</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register | Fixora</title>
+  <!-- Font Awesome للأيقونات داخل الحقول -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+  <!-- غلاف الصفحة كامل فوق الخلفية -->
+  <main class="page-wrap">
+    <section class="register-card">
+
+      <!-- يسار: صورة التدرج المظلّبة + النص -->
+      <aside class="register-left">
+        <div class="left-content">
+          <img src="image/home-logo.png" alt="Fixora" class="brand-logo">
+          <h2 class="left-title">Register your account</h2>
+          <p class="left-sub">
+            Welcome To Fixora Your Trusted<br>
+            Home Service Platform
+          </p>
+        </div>
+      </aside>
+
+      <!-- يمين: الفورم -->
+      <section class="register-right">
+        <!-- ✅ استبدلنا action بـ register.php وأضفنا أسماء الحقول -->
+        <form class="form-box" action="php/register.php" method="post" autocomplete="on">
+
+          <!-- Full name -->
+          <label class="field">
+            <span class="field-label">Full name</span>
+            <i class="fa-solid fa-user field-icon"></i>
+            <input type="text" name="full_name" placeholder="write your name here" required>
+          </label>
+
+          <!-- Phone -->
+          <label class="field">
+            <span class="field-label">Phone Number</span>
+            <i class="fa-solid fa-phone field-icon"></i>
+            <input type="tel" name="phone" placeholder="ex: +972592643752" required>
+          </label>
+
+          <!-- Address -->
+          <label class="field">
+            <span class="field-label">Address</span>
+            <i class="fa-solid fa-location-dot field-icon"></i>
+            <input type="text" name="address" placeholder="Address (City, Street, Details)">
+          </label>
+
+          <!-- Password -->
+          <label class="field">
+            <span class="field-label">Password</span>
+            <i class="fa-solid fa-lock field-icon"></i>
+            <input type="password" name="password" placeholder="Create Password" required>
+          </label>
+
+          <!-- Confirm Password -->
+          <label class="field">
+            <span class="field-label">Confirm password</span>
+            <i class="fa-solid fa-lock field-icon"></i>
+            <input type="password" name="password_confirm" placeholder="Confirm password" required>
+          </label>
+
+          <!-- Account Type -->
+          <label class="field">
+            <span class="field-label">Account Type</span>
+            <i class="fa-solid fa-user-check field-icon"></i>
+            <select name="role" required>
+              <option value="">-- Type --</option>
+              <option value="customer">Client</option>
+              <option value="provider">Service Provider</option>
+                <option value="admin">admin</option>
+            </select>
+          </label>
+
+          <!-- Agree -->
+          <label class="agree">
+            <input type="checkbox" name="agree" value="1" required>
+            <span>
+              By signing in, you agree to our
+              <a href="#">Terms &amp; Condition</a> and
+              <a href="#">Privacy Policy</a>.
+            </span>
+          </label>
+
+          <!-- Submit -->
+          <button class="btn-primary" type="submit">Create Your Account</button>
+
+          <!-- Already have account -->
+          <p class="have-account">
+            Already have account?
+            <a href="login.html">Login</a>
+          </p>
+
+        </form>
+      </section>
+
+    </section>
+  </main>
+
+</body>
+</html>

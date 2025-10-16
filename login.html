@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Fixora</title>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="register-card">
+
+      <!-- Left -->
+      <div class="register-left">
+        <div class="left-content">
+          <img src="image/home-logo.png" alt="Fixora Logo" class="brand-logo">
+          <h2 class="left-title">Welcome back 👋</h2>
+          <p class="left-sub">Your Home’s Comfort Starts Here –<br> Fast Services With Top Quality</p>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="register-right">
+        <!-- ✅ لما يعمل لوجن نوديه على داشبورد مؤقت -->
+        <form class="form-box"  action="php/login.php" method="post" >
+          <h3 class="form-title">Login to continue</h3>
+
+          <!-- Phone -->
+          <div class="field">
+            <label class="field-label">Phone Number</label>
+            <i class="fa-solid fa-phone field-icon"></i>
+            <!-- <input type="tel" placeholder="ex: +972597788605" required> -->
+             <input type="tel" name="phone" placeholder="ex: +972592643752" required>
+          </div>
+
+          <!-- Password -->
+          <div class="field">
+            <label class="field-label">Password</label>
+            <i class="fa-solid fa-lock field-icon"></i>
+            <!-- <input type="password" placeholder="****" required> -->
+             <input type="password" name="password" placeholder="****" required>
+          </div>
+
+          <!-- Remember / Forgot -->
+          <div class="options">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="rest_start.html" class="forgot">Forget password?</a>
+          </div>
+
+          <button class="btn-primary" type="submit">Login</button>
+
+          <p class="have-account">
+            I don’t have an account? <a href="register.html">Signup</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

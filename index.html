@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Home, Our Priority - Home Services</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer">
+<script src="js/script.js"></script>
+</head>
+<body>
+<section class="section-hero">
+  <header class="navbar">
+  <div class="logo-wrap">
+  <img src="image/home-logo.png" class="logo" alt="Fixora logo" />
+  </div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="../mp/php/aboutus.php">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="../mp/php/viewmore.php">Service</a>
+    </nav>
+
+    <div class="auth">
+      <a href="login.html" class="btn login">login</a>
+      <a href="register.html" class="btn signup">Signup</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-left">
+      <h1 class="title">
+        Fast, <span class="hl">Reliable Cleaning</span> And
+        <br />
+        <span class="hl">Maintenance</span> – All In One Place
+      </h1>
+
+      <p class="sub">
+        From Cleaning To Plumbing To Electrical Repairs — get trusted, fast, and
+        affordable home services with just a few clicks.
+      </p>
+    
+<!--   
+<div class="search-wrap">
+  <input type="text" class="search-input" placeholder="Find your service">
+  <button class="filter-btn">
+    <i class="fa-solid fa-sliders"></i>
+  </button>
+</div> -->
+
+
+  <form class="search-wrap" action="php/index.php" method="get">
+  <input type="text" name="q" class="search-input" placeholder="Find your service">
+  <button class="filter-btn" type="submit" aria-label="Filter">
+    <i class="fa-solid fa-sliders"></i>
+  </button>
+</form>
+
+
+
+      <div class="vip">
+        <div class="faces">
+          <img src="image/Ellipse 3.png" class="face" alt="">
+          <img src="image/Ellipse 4.png" class="face" alt="">
+          <img src="image/Ellipse 5.png" class="face" alt="">
+          <span class="more">+100</span>
+        </div>
+        <span class="vip-text">Our VIP Clients</span>
+      </div>
+
+      <div class="stats">
+        <div class="stat" data-bg="150">
+          <div class="num">150%</div>
+          <div class="label">Team Members By<br>Our Service</div>
+        </div>
+        <div class="stat" data-bg="2300">
+          <div class="num">2,300+</div>
+          <div class="label">Project Completed By<br>Our Service</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+  
+      <svg class="dotted" width="612" height="612" viewBox="0 0 612 612" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="306" cy="306" r="305" fill="none" stroke="#9aa0a6" stroke-width="2"
+                stroke-dasharray="30 30" opacity="0.35"/>
+      </svg>
+
+
+      <img src="image/pngegg - 2022-12-31T123205 1.png" class="hero-img" alt="hero">
+      <div class="float fi1">
+        <img src="image/Rectangle 12.png" alt="">
+      </div>
+
+      <div class="float fi2">
+        <img src="image/Rectangle 13.png" alt="">
+      </div>
+
+      <div class="float fi3">
+        <img src="image/photo_2025-08-22_14-45-16.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="services" aria-labelledby="services-heading">
+  <div class="services__wrap">
+    <header class="services__header">
+      <h2 id="services-heading" class="services__title">
+        Your Home’s Comfort Starts With
+      </h2>
+      <a href="#" class="buttonx buttonx--primary services__cta">Our Services</a>
+    </header>
+
+    <div class="services__grid">
+      <article class="service-card">
+        <div class="service-img-wrap">
+          <img src="image/cleaning.jpg" alt="Home Cleaning" class="service-img" />
+          <span class="service-icon">
+            <img src="image/cleaning-logo.png" alt="Cleaning icon">
+          </span>
+        </div>
+
+        <h3 class="service-title">Home Cleaning</h3>
+        <p class="service-text">
+          Our people are highly rated experts at cleaning and will make they leave your home sparkling.
+        </p>
+        <!-- <button class="book-btn service-btn">Book Now</button> -->
+         <button class="book-btn service-btn">
+  <a href="php/book.php" style="color:inherit; text-decoration:none; display:block; width:100%; height:100%;">
+    Book Now
+  </a>
+</button>
+      </article>
+
+      <article class="service-card">
+        <div class="service-img-wrap">
+          <img src="image/سباكة.png" alt="Plumbing" class="service-img" />
+          <span class="service-icon">
+            <img src="image/pluping-logo.png" alt="Plumbing icon">
+          </span>
+        </div>
+
+        <h3 class="service-title">Plumbing</h3>
+        <p class="service-text">
+          Leaking tap? Broken pipe? Don’t worry — we deliver plumbing services you can trust.
+        </p>
+        <!-- <button class="book-btn service-btn">Book Now</button> -->
+         <button class="book-btn service-btn">
+  <a href="php/book.php" style="color:inherit; text-decoration:none; display:block; width:100%; height:100%;">
+    Book Now
+  </a>
+</button>
+      </article>
+
+      <article class="service-card">
+        <div class="service-img-wrap">
+          <img src="image/electronic.jpg" alt="Electrical" class="service-img" />
+          <span class="service-icon">
+            <img src="image/electrocal-logo.png" alt="Electrical icon">
+          </span>
+        </div>
+
+        <h3 class="service-title">Electrical</h3>
+        <p class="service-text">
+          Fast and safe electrical service by certified experts to ensure your home runs efficiently and securely.
+        </p>
+        <!-- <button class="book-btn service-btn">Book Now</button> -->
+         <button class="book-btn service-btn">
+  <a href="php/book.php" style="color:inherit; text-decoration:none; display:block; width:100%; height:100%;">
+    Book Now
+  </a>
+</button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="work-process">
+   <div class="decor-bubbles"></div>
+<img src="image/Group 46.png" alt="decor lines" class="decor-lines right">
+<img src="image/Group 46.png" alt="decor lines" class="decor-lines left">
+<img src="image/plum-logo2.png" alt="decor tool" class="decor-tool">
+
+  <div class="container">
+    <h2 class="section-title">Our Work</h2>
+    <button class="process-btn">Process</button>
+
+    <div class="process-steps">
+      <div class="step">
+        <div class="icon-circle">
+          <img src="image/search.png" alt="Search">
+        </div>
+        <h3>Search</h3>
+        <p>Find The Service That Suits You Quickly And Easily</p>
+      </div>
+
+      <div class="step">
+        <div class="icon-circle">
+          <img src="image/booking.png" alt="Booking">
+        </div>
+        <h3>Booking</h3>
+        <p>Book The Service With One Click At Your Convenience</p>
+      </div>
+
+      <div class="step">
+        <div class="icon-circle">
+          <img src="image/tracking.png" alt="Tracking">
+        </div>
+        <h3>Tracking</h3>
+        <p>Find The Service That Suits You Quickly And Easily</p>
+      </div>
+
+      <div class="step">
+        <div class="icon-circle">
+          <img src="image/rate and finish.png" alt="Rate And Finish">
+        </div>
+        <h3>Rate And Finish</h3>
+        <p>Rate Your Experience And Enjoy A Tidy And Clean Home And Safe</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="portfolio-section">
+  <div class="wrap">
+    <h2 class="heading-main">Why Choose Us</h2>
+    <a href="#" class="btn-main">Services Fixora</a>
+
+    <div class="media-grid">
+
+      <figure class="media-item">
+        <span class="v-chip">Cleaning</span>
+
+        <video
+          src="image/video_2025-08-22_13-05-35.mp4"
+          controls
+          preload="metadata"
+          playsinline
+        ></video>
+
+
+        <button class="v-play" aria-label="Play video">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="22"></circle>
+            <path d="M20 16 L36 24 L20 32 Z"></path>
+          </svg>
+        </button>
+      </figure>
+
+      <figure class="media-item">
+        <span class="v-chip">Plumbing</span>
+
+        <video
+          src="image/video_2025-08-22_13-06-11.mp4"
+          controls
+          preload="metadata"
+          playsinline
+        ></video>
+
+        <button class="v-play" aria-label="Play video">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="22"></circle>
+            <path d="M20 16 L36 24 L20 32 Z"></path>
+          </svg>
+        </button>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="testimonials">
+  <img src="image/photo_2025-08-21_13-18-36.jpg" alt="decor" class="decor-full">
+  <div class="container">
+    <h2 class="title">What Our Customers Say</h2>
+    <a class="tag" href="#">Happy Customers</a>
+
+    <div class="slides">
+      
+
+<div class="cards is-active" data-index="0">
+  <article class="card">
+    <a class="avatar-link" href="https://example.com/cleaning" target="_blank" rel="noopener">
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/71.jpg" alt="Cleaner">
+    </a>
+    <h3 class="name">Arlene McCoy</h3>
+    <p class="role">Cleaning</p>
+    <p class="desc">Quick, detailed, and super friendly. My place looks brand new.</p>
+    <div class="stars">
+      <span class="star fill"></span><span class="star fill"></span>
+      <span class="star fill"></span><span class="star fill"></span>
+      <span class="star"></span>
+    </div>
+  </article>
+
+  <article class="card">
+    <a class="avatar-link" href="https://example.com/plumbing" target="_blank" rel="noopener">
+      <img class="avatar" src="https://randomuser.me/api/portraits/women/71.jpg" alt="Plumber">
+    </a>
+    <h3 class="name">Courtney Henry</h3>
+    <p class="role">Plumbing</p>
+    <p class="desc">On-time, tidy work, and no more leaks. Highly recommended.</p>
+    <div class="stars">
+      <span class="star fill"></span><span class="star fill"></span>
+      <span class="star fill"></span><span class="star"></span>
+      <span class="star"></span>
+    </div>
+  </article>
+
+  <article class="card">
+    <a class="avatar-link" href="https://example.com/electrical" target="_blank" rel="noopener">
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/72.jpg" alt="Electrician">
+    </a>
+    <h3 class="name">Esther Howard</h3>
+    <p class="role">Electrical</p>
+    <p class="desc">Explained everything and fixed it safely. Great experience.</p>
+    <div class="stars">
+      <span class="star fill"></span><span class="star fill"></span>
+      <span class="star fill"></span><span class="star fill"></span>
+      <span class="star"></span>
+    </div>
+  </article>
+</div>
+
+
+
+      <div class="cards" data-index="1">
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Plumber">
+          <h3 class="name">Michael Johnson</h3>
+          <p class="role">Plumber</p>
+          <p class="desc">I had a major leak at home, and Michael fixed it quickly and professionally. The work was neat and clean. I finally feel safe with my plumbing system.</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/46.jpg" alt="Electrician">
+          <h3 class="name">Robert Fox</h3>
+          <p class="role">Electrician</p>
+          <p class="desc">Robert provided excellent electrical service. He was on time, friendly, and fixed the issue safely. Highly recommended for quality work.</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span><span class="star"></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cleaner">
+          <h3 class="name">Jenny Wilson</h3>
+          <p class="role">Cleaner</p>
+          <p class="desc">Jenny did an outstanding cleaning job. She was fast, efficient, and used eco-friendly products. The place looks brighter and smells fresh.</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span>
+          </div>
+        </article>
+      </div>
+
+
+      <div class="cards" data-index="2">
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/40.jpg" alt="Electrician">
+          <h3 class="name">Cody Fisher</h3>
+          <p class="role">Electrician</p>
+          <p class="desc">Cody was very professional and quick to respond. The booking process was smooth and he explained how to maintain safety at home.</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span><span class="star"></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Gardener">
+          <h3 class="name">Eleanor Pena</h3>
+          <p class="role">Gardener</p>
+          <p class="desc">Eleanor transformed our backyard beautifully. She’s detail-oriented, hardworking, and always cheerful. Highly recommended!</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/74.jpg" alt="Plumber">
+          <h3 class="name">Darlene Robertson</h3>
+          <p class="role">Plumber</p>
+          <p class="desc">Darlene quickly identified the leak and fixed it without any mess. Efficient, neat, and affordable plumbing service.</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span>
+          </div>
+        </article>
+      </div>
+
+
+
+      <div class="cards" data-index="3">
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/22.jpg" alt="Painter">
+          <h3 class="name">Leslie Alexander</h3>
+          <p class="role">Painter</p>
+          <p class="desc">Leslie did a fantastic job painting our living room. The finish was spotless and she left the place perfectly clean. Truly professional.</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/19.jpg" alt="Carpenter">
+          <h3 class="name">Jacob Jones</h3>
+          <p class="role">Carpenter</p>
+          <p class="desc">Jacob built a custom shelf and repaired our table. Quality was top-notch and he finished faster than expected.</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span><span class="star"></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/81.jpg" alt="HVAC Technician">
+          <h3 class="name">Wade Warren</h3>
+          <p class="role">HVAC Technician</p>
+          <p class="desc">Wade inspected and repaired our AC system. Worked efficiently and explained everything clearly. Excellent service!</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span>
+          </div>
+        </article>
+      </div>
+
+
+      <div class="cards" data-index="4">
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/13.jpg" alt="Mover">
+          <h3 class="name">Albert Flores</h3>
+          <p class="role">Mover</p>
+          <p class="desc">Albert and his team handled our furniture with care. Quick, organized, and stress-free moving service.</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span><span class="star"></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/56.jpg" alt="Housekeeper">
+          <h3 class="name">Savannah Nguyen</h3>
+          <p class="role">Housekeeper</p>
+          <p class="desc">Savannah did an amazing job cleaning our apartment. Spotless, polite, and highly professional.</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="avatar" src="https://randomuser.me/api/portraits/women/2.jpg" alt="Window Cleaner">
+          <h3 class="name">Kathryn Murphy</h3>
+          <p class="role">Window Cleaner</p>
+          <p class="desc">Kathryn made our windows shine like new. No streaks and crystal clear. Fantastic job!</p>
+          <div class="stars">
+            <span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star fill"></span><span class="star"></span>
+          </div>
+        </article>
+      </div>
+
+    </div>
+
+    <div class="dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+       <span class="dot" data-index="4"></span>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="why-choose">
+    <img src="image/Group 46.png" alt="decor right" class="decor-lines right">
+  <img src="image/Group 46.png" alt="decor left" class="decor-lines left">
+  <div class="wc-wrap">
+    <h2 class="wc-title">Why Choose Us</h2>
+    <a href="#" class="wc-tag">Fixora</a>
+
+    <div class="wc-grid">
+   
+      <article class="wc-item">
+        <div class="wc-icon">
+          <img src="image/certified experts.png" alt="Certified Experts">
+        </div>
+        <h3 class="wc-name">Certified Experts</h3>
+        <p class="wc-desc">Skilled professionals who deliver exceptional results every time.</p>
+      </article>
+
+
+      <article class="wc-item">
+        <div class="wc-icon">
+          <img src="image/Fast&flexible.png" alt="Fast & Flexible">
+        </div>
+        <h3 class="wc-name">Fast & Flexible</h3>
+        <p class="wc-desc">Quick response and scheduling that works around your needs.</p>
+      </article>
+
+
+      <article class="wc-item">
+        <div class="wc-icon">
+          <img src="image/Lasting quality.png" alt="Lasting Quality">
+        </div>
+        <h3 class="wc-name">Lasting Quality</h3>
+        <p class="wc-desc">Premium tools and materials for results that truly last.</p>
+      </article>
+
+
+      <article class="wc-item">
+        <div class="wc-icon">
+          <img src="image/transparent pricing.png" alt="Transparent Pricing">
+        </div>
+        <h3 class="wc-name">Transparent Pricing</h3>
+        <p class="wc-desc">Fair rates with no surprises or hidden fees — ever.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+ <section class="discount-section">  
+  <div class="container discount-container">  
+    <div class="discount-details">  
+      <img src="image/Rectangle 20.png" alt="effects" class="effect">  
+      <div class="test">  
+        <button class="discount-btn">Discount</button>  
+        <p>Book two or more services and <br> get a discount of up to 20 %</p>  
+        <div class="btn-wrapper">  
+          <button class="book-btn">Book Now</button>  
+           
+          <div class="book-btn-bg"></div>  
+        </div>  
+      </div>  
+    </div>  
+    <div class="discount-20">  
+        <img src="image/photo_2025-08-22_14-45-13.jpg" alt="dots">  
+        <img src="image/Group 48.png" alt="discount">  
+    </div>  
+
+  <div class="discount-image">
+  <img src="image/cleaning-man.png" class="slide active" alt="worker 1">
+  <img src="image/man 3.png" class="slide" alt="worker 2">
+  <img src="image/man2.png" class="slide" alt="worker 3">
+</div>
+    <img src="image/Group 46.png" alt="circles" class="circles">  
+  </div>  
+ </section>
+
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+
+    <div class="footer-col footer-brand">
+      <div class="brand-row">
+        <img src="image/home-logo.png" alt="Fixora logo" class="brand-logo">
+      </div>
+
+      <p class="brand-desc">
+        Our Go-To Platform For Cleaning, Plumbing, And Electrical Maintenance
+        Services With Live Tracking And Special Discounts.
+      </p>
+
+      <ul class="social">
+        <li>
+          <a class="soc fb" href="https://facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </li>
+        <li>
+          <a class="soc ig" href="https://instagram.com/yourhandle" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a class="soc x" href="https://x.com/yourhandle" target="_blank" rel="noopener" aria-label="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a class="soc li" href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="col-title">Company</h4>
+      <ul class="col-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Terms Of Service</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="col-title">Services</h4>
+      <ul class="col-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">Terms Of Service</a></li>
+      </ul>
+    </div>
+
+  
+    <div class="footer-col">
+      <h4 class="col-title">Contact Information</h4>
+      <ul class="contact-list">
+        <li><i class="fa-solid fa-location-dot"></i> Gaza – Palestine</li>
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:Fixora2025@gmail.com">Fixora2025@gmail.com</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+972597789185">+972 592643752</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="footer-copy">© 2025 All Rights Reserved — <span class="brand">Fixora</span></p>
+</footer>
+
+  </main>
+</body>
+</html>

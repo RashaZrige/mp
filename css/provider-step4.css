@@ -1,0 +1,146 @@
+:root{
+  --bg:#f5f7fb; --card:#fff; --stroke:#e6edf6; --text:#111827; --muted:#6b7280;
+  --blue:#1e73ff; --blue-700:#1667d8; --green:#10b981;
+}
+
+/* Base */
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+  color: var(--text);
+   background: url("../image/photo_2025-08-26_12-08-45.jpg") center/cover no-repeat fixed;
+}
+
+/* Shell */
+.page{ min-height:100svh; display:grid; place-items:center; padding:28px 16px }
+.card{
+  width:min(1100px,96vw);
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:16px;
+  box-shadow:0 18px 46px rgba(0,0,0,.08);
+  overflow:hidden;
+}
+
+/* Title + stepper */
+.card-title{ text-align:center; padding:24px 22px 10px; }
+.card-title h1{ margin:0 0 18px; font-size:20px }
+
+/* Stepper */
+.steps{
+  list-style:none; padding:0; margin:0 auto; max-width:760px;
+  display:flex; align-items:center; justify-content:space-between; position:relative;
+}
+.steps::before{
+  content:""; position:absolute; top:26px; left:90px; right:90px;
+  height:2px; background:#e5e7eb;
+}
+.step{ width:140px; text-align:center; color:var(--muted); position:relative }
+.step .dot{
+  width:36px; height:36px; border-radius:999px;
+  display:grid; place-items:center; margin:0 auto 6px;
+  font-weight:700; background:#eff3fb; color:#6b7aa6; border:1px solid var(--stroke);
+}
+.step small{ display:block; font-size:12px }
+.step.is-active{ color:var(--text) }
+.step.is-active .dot{ background:var(--blue); color:#fff; border-color:var(--blue) }
+.step.is-done{ color:#065f46 }
+.step.is-done .dot{ background:var(--green); color:#fff; border-color:var(--green) }
+
+/* Body */
+.body{ padding:22px 28px 28px }
+.section-title{ font-size:18px; margin:6px 0 16px }
+
+/* Fields */
+.field{ margin:0 0 16px }
+label{ display:block; font-size:12px; color:#111827; margin:0 0 6px }
+
+input[type=password]{
+  width: 60%;         /* بدل 100%، خليها 60% من عرض العمود */
+  height: 44px;
+  border:1px solid #4b5563;
+  border-radius:8px;
+  background:#fff;
+  padding:10px 14px;
+  font-size:15px;
+  outline:0;
+  margin: 0 auto;     /* يخليه بالنص */
+}
+input:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(30,115,255,.15);
+}
+
+.with-icon{ position:relative }
+.with-icon i{
+  position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  color:#8a96a8; font-size:14px;
+}
+.with-icon input{ padding-left:36px }
+
+.field.checkbox label{
+  font-size:13px; color:#333; display:flex; align-items:center; gap:6px;
+}
+.field.checkbox a{ color:var(--blue); text-decoration:none }
+.field.checkbox a:hover{ text-decoration:underline }
+
+/* Actions */
+/* .actions{ margin-top:16px; display:flex; justify-content:flex-end; gap:12px }
+.btn{
+  height:48px; padding:0 24px; border-radius:28px; font-weight:700; cursor:pointer; border:0;
+}
+.btn.prev{
+  min-width:220px; background:#9aa3b2; color:#fff;
+}
+.btn.next{
+  min-width:220px;
+  background:linear-gradient(180deg,#28a0ff 0%, #1e73ff 100%);
+  color:#fff; box-shadow:0 10px 18px rgba(30,115,255,.25);
+}
+.btn.next:hover{ background:linear-gradient(180deg,#2596ff 0%, #1667d8 100%) } */
+
+
+.actions {
+  margin-top: 60px;        /* ↓ ينزل الأزرار لتحت أكتر */
+  display: flex;
+  justify-content: flex-end; /* ← يخليهم على الجنب اليمين */
+  gap: 14px;               /* مسافة بين الزرين */
+  padding-right: 20px;     /* يعطيهم مسافة عن الحافة */
+}
+
+.btn {
+  height: 38px;            /* زر صغير */
+  min-width: 140px;
+  padding: 0 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: 0;
+  transition: all 0.2s ease;
+}
+
+.btn.prev {
+  background: #9aa3b2;
+  color: #fff;
+}
+
+.btn.next {
+  background: linear-gradient(180deg,#28a0ff 0%, #1e73ff 100%);
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(30,115,255,.25);
+}
+
+.btn.next:hover {
+  background: linear-gradient(180deg,#2596ff 0%, #1667d8 100%);
+}
+
+/* Responsive */
+@media (max-width:980px){
+  .steps{ max-width:100% }
+  .steps::before{ left:24px; right:24px }
+  .actions{ justify-content:stretch; flex-direction:column }
+  .btn.prev, .btn.next{ width:100% }
+}

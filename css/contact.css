@@ -1,0 +1,685 @@
+:root{
+  --fx-blue:#1e73ff;
+  --fx-blue-600:#1667d8;
+  --fx-blue-100:#e6f0ff;
+  --fx-text:#111827;
+  --fx-muted:#6b7280;
+   --light-blue: #4185f3;
+}
+
+
+.fx-hero{
+  /* background:
+    linear-gradient(90deg,#cfe2ff 0%, #eaf2ff 45%, #fde7c4 100%); */
+  /* background: #fff; */
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  padding: 18px 0 64px;
+  position:relative;
+  overflow:hidden;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--fx-text);
+}
+
+/* ====== Navbar ====== */
+.fx-nav{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 40px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.fx-brand{display:flex;align-items:center;gap:10px}
+.fx-logo{width:220px;height:auto;object-fit:contain}
+.fx-brand-name{font-weight:700;font-size:28px}
+
+.fx-links{
+  margin-left:auto;margin-right:auto;
+  display:flex;align-items:center;gap:18px;
+}
+.fx-links a{
+  position:relative;
+  padding:10px 14px;
+  font-weight:600;font-size:16px;
+  text-decoration:none;color:var(--fx-text);
+  border-radius:10px;transition:color .2s, background .2s;
+}
+.fx-links a::after{
+  content:"";position:absolute;left:50%;bottom:6px;
+  width:0;height:2px;background:var(--fx-blue);
+  transform:translateX(-50%);transition:width .25s;
+}
+.fx-links a:hover{color:var(--fx-blue);background:rgba(30,115,255,.06)}
+.fx-links a:hover::after{width:60%}
+.fx-links a.active{color:var(--fx-blue);background:rgba(30,115,255,.10)}
+.fx-links a.active::after{width:70%}
+
+.fx-actions{display:flex;gap:12px}
+.fx-btn{
+
+    display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 60px;     
+  border-radius: 50px;   
+  font-weight: 600;
+  font-size: 18px;      
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+.fx-btn--primary{
+  background:var(--fx-blue);color:#fff;border:none;
+  box-shadow:0 6px 14px rgba(30,115,255,.25);
+}
+.fx-btn--primary:hover{background:var(--fx-blue-600);transform:translateY(-2px)}
+.fx-btn--ghost{
+  background:var(--fx-blue-100);color:#0b1324;border:2px solid var(--fx-blue);
+}
+.fx-btn--ghost:hover{background:#fff;transform:translateY(-2px)}
+
+
+
+
+
+
+
+
+
+/* ===== Contact Hero ===== */
+.contact-hero{
+  /* جراديانت يغطي كامل السكشن */
+  background: linear-gradient(90deg, #cfe2ff 0%, #eaf2ff 45%, #fde7c4 100%);
+  /* يفتح بعرض الصفحة كله حتى لو داخل .container عامة */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  padding: 72px 0 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ch-container{
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: 1fr auto; /* نص يسار + أيقونات يمين */
+  align-items: center;
+  gap: 24px;
+}
+
+.ch-eyebrow{
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  opacity: .8;
+  margin: 0 0 12px;
+}
+
+.ch-title{
+  font-size: clamp(38px, 6.4vw, 72px); /* عنوان ضخم متجاوب */
+  line-height: 1.05;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: .2px;
+  margin: 0;
+}
+
+
+.ch-social{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+  justify-items: end; /* محاذاة للأيمن */
+}
+
+.ch-social a{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: #1e73ff;
+  border: 2px solid rgba(30,115,255,.35);
+  /* background: rgba(255,255,255,.55); */
+  backdrop-filter: blur(2px);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.ch-social a:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(30,115,255,.22);
+  background: #fff;
+}
+
+.ch-social i{
+  font-size: 18px;
+}
+
+
+/* موبايل: الأيقونات تحت العنوان بدل يمين */
+@media (max-width: 780px){
+  .ch-container{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .ch-social{
+    justify-items: start;
+  }
+}
+
+
+
+
+
+
+
+
+/* شريط التواصل بخلفية كاملة للسيكشن */
+.contact-bar{
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* زخرفة ناعمة (دوائر وتدرّج + خطوط خفيفة) تغطي كل السيكشن */
+.contact-bar::before{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(650px 650px at -10% 80%, rgba(59,130,246,.12), rgba(59,130,246,0) 60%),
+    radial-gradient(650px 650px at 110% -10%, rgba(250,204,21,.16), rgba(250,204,21,0) 60%),
+    repeating-linear-gradient(135deg, rgba(0,0,0,.028) 0 14px, rgba(255,255,255,.028) 14px 28px);
+}
+
+/* الحاوية */
+.contact-container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+
+}
+
+/* العناوين اليسار */
+.eyebrow{
+  margin: 0 0 8px;
+  font-size: 14px;
+  letter-spacing: .06em;
+  color: #6b7280;
+  margin-top: 40px;
+}
+.contact-left h3{
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* الأعمدة اليمنى */
+.contact-col h4{
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 40px;
+}
+.contact-col .value{
+  display: inline-block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #111827;
+  text-decoration: none;
+}
+.contact-col .value:hover{ text-decoration: underline; }
+
+.hours-title{
+  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b7280;
+}
+.hours{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+/* استجابة */
+@media (max-width: 900px){
+  .contact-container{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .contact-left h3{ font-size: 26px; }
+}
+
+
+
+
+
+:root{
+  --border:#000000;
+  --muted:#6b7280;
+  --text:#111827;
+  --blue:#3B82F6;
+  --bg:#ffffff;
+  --radius:8px;
+  --gap:24px;
+}
+
+body{margin:0;background:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
+.contact{direction:ltr;background:var(--bg);}
+.contact .container{max-width:1100px;margin:0 auto;padding:40px 20px;}
+.contact h2{
+  /* margin:0 0 20px 0; */
+  margin-top: 40px;
+  font-size:28px; font-weight:700; color:var(--text);
+  text-align:left;
+}
+
+/* النموذج */
+.contact-form{max-width:100%; text-align:left;}
+.row.three{
+  display:grid;
+   grid-template-columns:repeat(3,1fr);
+    gap:var(--gap);
+  margin-bottom:18px;
+}
+
+.field{display:block;}
+.field label{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:12px; color:var(--muted); margin-bottom:6px;
+}
+.field label .optional{
+  font-size:11px; color:#8b8b8b; border:1px solid var(--border);
+  padding:2px 8px; border-radius:999px;
+}
+
+.input-wrap{position:relative;}
+.input-wrap i{
+  position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  font-size:14px; color:#9ca3af; pointer-events:none;
+}
+/* .input-wrap input{
+  width:100%; height:42px;
+  padding:10px 12px 10px 38px;
+  border:1px solid var(--border); border-radius:var(--radius);
+  font-size:14px; color:var(--text); background:#fff; outline:none;
+  transition:border-color .15s ease;
+} */
+
+.input-wrap input {
+  width:100%; 
+  height:42px;
+  padding:10px 12px 10px 46px; /* 👈 زودت المسافة من اليسار */
+  border:1px solid var(--border); 
+  border-radius:var(--radius);
+  font-size:14px; 
+  color:var(--text); 
+  background:#fff; 
+  outline:none;
+  transition:border-color .15s ease;
+  box-sizing: border-box; /* 👈 يمنع التداخل */
+}
+.input-wrap input::placeholder{color:#9ca3af;}
+.input-wrap input:focus{border-color:var(--blue);}
+
+/* الرسالة */
+.field.full{margin-top:6px;}
+
+
+.field label {
+  display: block;   /* 👈 يخلي الـ label ياخد سطر كامل */
+  margin-bottom: 6px; /* 👈 مسافة صغيرة تحت الكلمة */
+  font-size: 14px;
+  font-weight: 500;
+}
+.field.full textarea {
+  width: 600px; 
+  height: 120px;     
+  padding: 8px 10px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  font-size: 14px;
+  resize: vertical; 
+  outline: none;
+  transition: border-color .15s ease;
+}
+
+
+.field.full textarea:focus{border-color:var(--blue);}
+
+
+
+
+.btn {
+  margin-top: 20px;
+  height: 50px;
+  padding: 0 60px;
+  background: #1E90FF; /* 👈 أزرق فاتح */
+  color: #fff;
+  border: none;
+  border-radius: 6px;  /* 👈 زوايا ناعمة */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 👈 ظل زي الصورة */
+  transition: all 0.3s ease;
+}
+
+/* لما تمر الماوس */
+.btn:hover {
+  background: #4AAFFB; /* 👈 أزرق أفتح عند الهوفر */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* لما ينضغط */
+.btn:active {
+  transform: translateY(0px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* استجابة الشاشات الصغيرة */
+@media (max-width:900px){
+  .row.three{grid-template-columns:1fr; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-footer {
+
+  background: url("image/footer-bg.jpg") center/cover no-repeat,
+              linear-gradient(135deg, #eaf2ff 0%, #fff3da 100%);
+  padding: 48px 18px 32px;  
+  margin-top: 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 28px;
+  align-items: start;
+}
+
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-logo {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+.brand-name {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+}
+.brand-desc {
+  color: #555;
+  line-height: 1.6;
+  margin: 12px 0 10px;
+  font-size: 14px;
+}
+
+
+.col-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 4px 0 10px;
+  color: #1E40AF;  
+}
+
+
+.col-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.col-links a {
+  color: #374151;
+  text-decoration: none;
+  transition: color .2s ease, transform .06s ease;
+}
+.col-links a:hover {
+  color: #1E90FF;   
+}
+.col-links a:active {
+  color: #145dbf;   
+  transform: translateY(1px);
+}
+
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.contact-list li {
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-list i {
+  color: #1E90FF;
+}
+.contact-list a {
+  color: #374151;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.contact-list a:hover {
+  color: #1E90FF;
+}
+.contact-list a:active {
+  color: #145dbf;
+}
+
+
+.social {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  list-style: none;
+  padding: 0;
+}
+.soc {
+  --c: #999;
+  --active: #1E90FF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  text-decoration: none;
+  outline: none;
+  transition: background-color .3s ease;
+}
+.soc i {
+  font-size: 16px;
+  color: var(--c);
+  transition: color .2s ease, transform .12s ease;
+}
+.soc:hover {
+  background-color: rgba(30, 144, 255, 0.1);
+}
+.soc:hover i {
+  color: #1E90FF;
+}
+.soc:active i {
+  color: var(--active);
+  transform: scale(.92);
+}
+
+
+.soc.fb { --c:#1877F2; --active:#145dbf; }  
+.soc.ig { --c:#E4405F; --active:#b6314b; }  
+.soc.x  { --c:#000000; --active:#333333; }  
+.soc.li { --c:#0A66C2; --active:#084d96; }   
+
+
+.footer-copy {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: #9CA3AF;
+}
+.footer-copy .brand {
+  color: #1E90FF;
+  font-weight: 700;
+}
+
+
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .site-footer {
+    border-radius: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ===== Fixora Contact: Responsive Patch (non-destructive) ===== */
+
+/* عام */
+html, body { overflow-x: hidden; }
+img, video { max-width: 100%; height: auto; display: block; }
+
+/* ===== Navbar / Hero Bar ===== */
+@media (max-width: 1200px){
+  .fx-nav{ padding: 14px 24px; }
+  .fx-logo{ width: 180px; height:auto; }
+}
+
+@media (max-width: 992px){
+  .fx-logo{ width: 160px; }
+  .fx-links a{ padding: 8px 10px; font-size: 15px; }
+  .fx-btn{ padding: 12px 24px; font-size: 16px; }
+}
+
+/* حل 100vw بالموبايل + ترتيب العناصر لسطرين بدون HTML إضافي */
+@media (max-width: 768px){
+  .fx-hero{ width: 100%; margin-left: 0; margin-right: 0; padding: 12px 0 36px; }
+  .fx-nav{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .fx-links{
+    order:3; width:100%; display:flex; flex-wrap:wrap; gap:10px; justify-content:center;
+  }
+  .fx-actions{ order:2; gap:8px; }
+  .fx-btn{ padding: 10px 16px; font-size: 14px; border-radius: 12px; }
+  .fx-links a::after{ display:none; } /* تبسيط الهوفر على الشاشات الصغيرة */
+}
+
+/* ===== Contact Hero ===== */
+@media (max-width: 920px){
+  .contact-hero{ padding: 56px 0 72px; }
+}
+@media (max-width: 780px){
+  .ch-container{ grid-template-columns: 1fr; gap: 24px; padding: 0 20px; }
+  .ch-title{ font-size: clamp(28px, 7vw, 40px); line-height: 1.15; }
+  .ch-social{ justify-items: start; }
+}
+@media (max-width: 480px){
+  .ch-title{ font-size: clamp(24px, 8.5vw, 34px); }
+  .ch-social a{ width: 48px; height: 48px; }
+}
+
+/* ===== Contact Bar (info tiles) ===== */
+@media (max-width: 900px){
+  .contact-bar{ padding: 64px 0; }
+  .contact-container{ grid-template-columns: 1fr; gap: 22px; padding: 0 20px; }
+  .contact-left h3{ font-size: 24px; }
+}
+
+/* ===== Contact Form ===== */
+/* شبكيّة الحقول: 3 أعمدة → 1 عمود تحت 900px (موجود عندك)، بنزيد تحسينات */
+@media (max-width: 1100px){
+  .contact .container{ padding: 32px 20px; }
+}
+
+/* اجعل التيكست إريا مرنة بدل عرض ثابت 600px */
+.field.full textarea{
+  width: 100% !important;
+  max-width: 100%;
+  min-height: 120px;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* راحة الكتابة بالموبايل */
+@media (max-width: 560px){
+  .row.three{ gap: 16px; }
+  .field label{ font-size: 13px; }
+  .input-wrap input{ height: 44px; font-size: 15px; padding-left: 44px; }
+  .btn{ width: 100%; max-width: 320px; }
+}
+
+/* ===== Footer ===== */
+@media (max-width: 992px){
+  .site-footer .footer-container{ grid-template-columns: 1fr 1fr; padding: 20px; }
+}
+@media (max-width: 560px){
+  .site-footer .footer-container{ grid-template-columns: 1fr; gap: 18px; }
+  .brand-logo{ width: 130px; }
+  .footer-copy{ font-size: 12px; text-align: center; }
+}
+
+/* ===== لمسات صغيرة لإزالة السّكرول الأفقي من عناصر الديكور إن وجدت ===== */
+.contact-hero, .contact-bar, .site-footer { overflow: hidden; }

@@ -1,0 +1,226 @@
+ .tb-inner{
+      max-width:1200px; margin:0 auto;
+      padding:18px 24px;
+      display:grid; grid-template-columns:auto 1fr auto;
+      align-items:center; gap:18px;
+    }
+    .tb-left{ display:flex; align-items:center; gap:50px; }
+    .icon-btn{
+      width:40px; height:40px; display:grid; place-items:center;
+      border:none; background:transparent; box-shadow:none; cursor:pointer;
+    }
+    .icon-btn i{ font-size:18px; color:#6b7280; }
+    .brand{ display:flex; align-items:center; gap:10px; }
+    .brand-logo{ width:150px; height:auto; object-fit:contain; }
+
+    .tb-center{ display:flex; justify-content:center; }
+    .search-wrap{ position:relative; width:min(680px,90%); margin-left:90px; }
+    .search-wrap input{
+      width:500px; height:48px; padding:0 16px 0 44px;
+      border:1px solid #cfd7e3; border-radius:12px; font-size:16px; background:#fff; outline:none;
+    }
+    .search-wrap input::placeholder{ color:#9aa4b2; }
+    .search-wrap i{
+      position:absolute; left:14px; top:50%; transform:translateY(-50%);
+      color:#8a94a6; font-size:18px;
+    }
+
+    .tb-right{ display:flex; align-items:center; gap:35px; }
+    .notif-pill{
+      width:42px; height:42px; display:grid; place-items:center;
+      border:1px solid #dfe6ef; background:#fff; border-radius:50%; cursor:pointer;
+    }
+    .notif-pill i{ font-size:18px; color:#1e73ff; }
+    .profile-trigger{
+      display:flex; align-items:center; gap:10px;
+      background:#fff; border:1px solid #e5e7eb;
+      padding:6px 12px; border-radius:40px; cursor:pointer;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+    }
+    .avatar{ width:48px; height:48px; object-fit:cover; border-radius:50%; display:block }
+    .chev{ color:#64748b; transition:transform .18s ease }
+
+
+
+
+      .profile-menu{ position:relative }
+.profile-trigger{
+  display:flex; align-items:center; gap:10px;
+  background:#fff; border:1px solid var(--border);
+  padding:6px 12px; border-radius:40px; cursor:pointer;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.avatar{ width:48px; height:48px; object-fit:cover; border-radius:50%; display:block }
+.chev{ color:#64748b; transition:transform .18s ease }
+.profile-menu.open .chev{ transform:rotate(180deg) }
+.menu-card{
+  position:absolute; right:0; top:calc(100% + 10px); z-index:9999; width:280px;
+  background:#fff; border:1px solid var(--border);
+  border-radius:18px; box-shadow:0 12px 30px rgba(0,0,0,.12);
+  padding:12px; overflow:auto; max-height:80vh;
+}
+.menu-item{
+  width:100%; display:flex; align-items:center; gap:12px;
+  padding:12px; border-radius:14px; color:#0f172a; text-decoration:none;
+  font-weight:600; background:#fff; border:0; cursor:pointer;
+}
+.menu-item:hover{ background:#f8fafc }
+.menu-item.danger{ color:#dc2626; justify-content:space-between }
+.divider{ border:0; height:1px; background:var(--border); margin:4px 0 }
+
+
+.notif-pill{
+  width:42px; height:42px; display:grid; place-items:center;
+  border:1px solid #dfe6ef; background:#fff; border-radius:50%; cursor:pointer;
+}
+.notif-pill i{ font-size:18px; color:#1e73ff; }
+
+
+
+
+    /* ====== Page container ====== */
+    .account-wrap{
+      max-width: 900px; margin: 24px auto 40px; padding: 0 16px;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color:#0f172a;
+    }
+    .page-title{ font-size:22px; font-weight:700; margin:0 0 14px; }
+
+    /* ====== Tabs ====== */
+    .tabs{ display:flex; gap:28px; border-bottom:1px solid #e5e7eb; margin-bottom:18px; }
+    .tab{
+      display:inline-block; padding:10px 0; font-size:14px;
+      color:#64748b; text-decoration:none; position:relative;
+    }
+    .tab.active{ color:#111827; font-weight:700; }
+    .tab.active::after{
+      content:""; position:absolute; left:0; right:0; bottom:-1px; height:2px; background:#3b82f6;
+    }
+
+    /* ====== Panels show/hide ====== */
+    .tab-panels .tab-panel{ display:none; }
+    .tab-panels .tab-panel.active{ display:block; }
+
+    /* ====== Section head ====== */
+    .section-head{ margin: 18px 0 10px; }
+    .section-title{ font-size:15px; font-weight:700; margin:0 0 4px; text-transform: lowercase; }
+    .section-desc{ font-size:12px; color:#6b7280; margin:0; }
+
+    /* ====== Card & inputs ====== */
+    .card{ border:1px solid #e5e7eb; border-radius:10px; background:#fff; padding:20px; margin:12px 0 22px; }
+    .form-group{ max-width:720px; }
+    .label{ display:block; font-size:12px; font-weight:700; color:#1f2937; margin-bottom:8px; }
+    .input-icon{ position:relative; }
+    .input-icon i{
+      position:absolute; left:12px; top:50%; transform:translateY(-50%); color:#94a3b8; font-size:16px;
+    }
+    .input-icon input{
+      width:100%; height:44px; padding:0 12px 0 38px;
+      border:1px solid #cbd5e1; border-radius:6px; font-size:14px; color:#0f172a; background:#fff;
+    }
+    .input-icon input::placeholder{ color:#94a3b8; }
+
+
+/* ====== Buttons ====== */
+     .actions{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  margin-top:300px;
+  margin-left: 320px;
+}
+    .btn{ min-width:220px; height:42px; border-radius:8px; font-weight:700; font-size:14px; cursor:pointer; border:0; }
+    .btn-primary{ background:#0d6efd; color:#fff; }
+    .btn-primary:hover{ background:#0b5ed7; }
+    .btn-outline-danger{ background:#fff; color:#111827; border:1px solid #dc3545; }
+    .btn-outline-danger:hover{ background:#fff5f6; }
+
+    @media (max-width:768px){
+      .brand-logo{ width:46px; }
+      .search-wrap{ width:100%; margin-left:0; }
+      .search-wrap input{ width:100%; }
+    }
+
+
+    /* نفس ستايل input مع زر يمين */
+.input-icon.has-trailing { position: relative; }
+.trailing-btn{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  width:40px; height:36px;
+  display:grid; place-items:center;
+  border:1px solid #cbd5e1; background:#fff; border-radius:6px;
+  cursor:pointer;
+}
+.trailing-btn i{ color:#6b7280; font-size:16px; }
+.input-icon.has-trailing input{ padding-right:56px; } /* مساحة للزر */
+
+
+
+
+
+
+
+
+
+/* كارد البروفايل */
+/* الكارد */
+.basic-card {
+  padding: 28px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  margin: 12px 0 22px;
+  box-sizing: border-box; /* يخلي المحتوى ما يطلع برا */
+}
+
+.bi-avatar-uploader {
+  display: flex;
+  flex-direction: column;   /* يخلي العناصر تحت بعض */
+  align-items: center;      /* يحطها بالنص أفقياً */
+  justify-content: center;  /* يحطها بالنص عمودياً */
+  gap: 12px;                /* مسافة بين العناصر */
+  margin: 0 auto 24px;      /* يخلي كل البلوك بالنص */
+  text-align: center;
+}
+.bi-avatar-circle{
+  width:110px; height:110px; border:2px dashed #cbd5e1; border-radius:50%;
+  display:grid; place-items:center; color:#94a3b8; font-size:34px; cursor:pointer;
+  overflow:hidden;                 /* مهم: يقص الصورة داخل الدائرة */
+  background:#fff;                 /* تأكد في خلفية */
+}
+.bi-avatar-circle img{
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;  /* تملأ الدائرة */
+  display:block;
+}
+
+/* شبكة الحقول */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px; /* مسافة بين الأعمدة والصفوف */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* كل حقل */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* input */
+.input-icon input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px 0 38px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box; /* مهم علشان ما يطلع برا */
+}
+
+
+
+
+
