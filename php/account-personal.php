@@ -43,24 +43,25 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
   $address   = trim($_POST['address'] ?? "");
   $avatarRel = $user['avatar']; // المسار الحالي إن وُجد
 
-  // هل رفع صورة جديدة؟
-  if (!empty($_FILES['avatar']['name']) && is_uploaded_file($_FILES['avatar']['tmp_name'])) {
-    $uploadDirAbs = DIR . "/../uploads/avatars/";
-    $uploadDirRel = "uploads/avatars/";
-    if (!is_dir($uploadDirAbs)) { @mkdir($uploadDirAbs, 0777, true); }
+// هل رفع صورة جديدة؟
+if (!empty($_FILES['avatar']['name']) && is_uploaded_file($_FILES['avatar']['tmp_name'])) {
+  // مسار مجلد الصور (بسيط بدون _DIR_)
+  $uploadDirRel = "../uploads/avatars/"; // المسار النسبي من ملف PHP
+  if (!is_dir($uploadDirRel)) { @mkdir($uploadDirRel, 0777, true); }
 
-    $ext = strtolower(pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION));
-    $ext = preg_replace('/[^a-z0-9]/i','',$ext);
-    if ($ext === '') $ext = 'jpg';
+  $ext = strtolower(pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION));
+  if ($ext === '') $ext = 'jpg';
 
-    $fileName = "user_{$uid}_" . time() . "." . $ext;
-    $tmpPath  = $_FILES['avatar']['tmp_name'];
-    $destPath = $uploadDirAbs . $fileName;
+  $fileName = "user_{$uid}_" . time() . "." . $ext;
+  $destPath = $uploadDirRel . $fileName;
 
-    if (move_uploaded_file($tmpPath, $destPath)) {
-      $avatarRel = $uploadDirRel . $fileName;
-    }
+  if (move_uploaded_file($_FILES['avatar']['tmp_name'], $destPath)) {
+    // احفظ المسار النسبي بدون النقاط
+    $avatarRel = "uploads/avatars/" . $fileName;
+  } else {
+    $flash = "⚠ فشل حفظ الصورة، تحقق من صلاحيات المجلد.";
   }
+}
 
   // تحديث users فقط (ما في provider_profiles)
   $sql  = "UPDATE users SET full_name=?, email=?, phone=?, address=?, avatar=? WHERE id=?";
