@@ -1725,6 +1725,7 @@ document.querySelectorAll('.js-delete-link').forEach(function (btn) {
     }
   });
 });
+});
 </script>
 
 <script>
