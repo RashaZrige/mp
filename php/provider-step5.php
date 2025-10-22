@@ -19,29 +19,23 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
   }
 
   if (isset($_POST['go']) && $_POST['go']==='next') {
-    // لازم يوافق
+    // لازم يوافق على الشروط
     if (empty($_POST['agree'])) {
-      $error = "⚠️ لازم توافق على الشروط للمتابعة.";
+      $error = "⚠ لازم توافق على الشروط للمتابعة.";
     } else {
-      // تحديث DB
-      // $st = $pdo->prepare("
-      //   INSERT INTO provider_profiles (user_id, terms_accepted, updated_at, created_at)
-      //   VALUES (:id, 1, NOW(), NOW())
-      //   ON DUPLICATE KEY UPDATE terms_accepted=1, updated_at=NOW()
-      // ");
-      // $st->execute([':id'=>$user_id]);
-
-
+      // ✅ تحديث أو إدخال خطوة 5 مع تفعيل القيود الفريدة
+      // (احرص إنك عامل UNIQUE KEY على user_id في جدول provider_profiles)
       $st = $pdo->prepare("
-  INSERT INTO provider_profiles (user_id, terms_accepted, step5_done, created_at, updated_at)
-  VALUES (:id, 1, 1, NOW(), NOW())
-  ON DUPLICATE KEY UPDATE
-    terms_accepted = 1,
-    step5_done     = 1,
-    updated_at     = NOW()
-");
-$st->execute([':id' => $user_id]);
-      // يروح على الداشبورد
+        INSERT INTO provider_profiles (user_id, terms_accepted, step5_done, created_at, updated_at)
+        VALUES (:id, 1, 1, NOW(), NOW())
+        ON DUPLICATE KEY UPDATE
+          terms_accepted = 1,
+          step5_done     = 1,
+          updated_at     = NOW()
+      ");
+      $st->execute([':id' => $user_id]);
+
+      // ✅ توجيه للداشبورد
       header("Location: dashboard.php");
       exit;
     }
