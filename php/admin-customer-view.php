@@ -123,7 +123,7 @@ $st->close();
 <section class="topbar">
   <div class="tb-inner">
     <div class="tb-left">
-      <a class="back-btn" href="admin_customers.php" title="Back"><i class="fa-solid fa-arrow-left"></i></a>
+      <a class="back-btn" href="admin-customers.php" title="Back"><i class="fa-solid fa-arrow-left"></i></a>
       <div class="brand"><img src="/mp/image/home-logo.png" alt="Fixora logo" class="brand-logo"></div>
     </div>
     <div class="tb-center"></div>
