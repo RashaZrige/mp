@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $BASE = '/mp';
@@ -59,11 +58,6 @@ if ($uid > 0) {
     $st->close();
   }
 }
-
-
-
-
-
 // هل المزوّد موقّف من الإدارة؟
 $adminSuspended = false;
 if ($PROVIDER_ID > 0) {
@@ -112,10 +106,18 @@ $kpi = [
 ];
 
 /* إجمالي العملاء (غير محذوفين) */
-if ($res = $conn->query("SELECT COUNT(*) AS c FROM users WHERE role='customer' AND is_deleted=0")) {
+ /* إجمالي العملاء لهذا المزود فقط */
+$sql = "
+  SELECT COUNT(DISTINCT b.customer_id) AS c
+  FROM bookings b
+  WHERE b.provider_id = {$PROVIDER_ID}
+    AND b.is_deleted = 0
+";
+if ($res = $conn->query($sql)) {
   $row = $res->fetch_assoc();
   $kpi['total_customers'] = (int)($row['c'] ?? 0);
 }
+
 
 /* لو إحنا على داشبورد مزوّد */
 if ($PROVIDER_ID > 0) {
@@ -740,6 +742,7 @@ stroke-width:2;
     </div>
   </section>
 
+  <!-- Quick Look / Upcoming Bookings -->
   <section class="wrap">
     <h2 class="ql-title">Quick Look</h2>
 
@@ -773,6 +776,8 @@ stroke-width:2;
               </div>
             </div>
           </div>
+
+          <!-- Status -->
           <div class="dropdown">
             <button id="btnStatus" class="filter-btn" type="button" aria-expanded="false">
               <span>Status</span>
@@ -796,7 +801,7 @@ stroke-width:2;
           <div class="dropdown">
 <button id="btnServices" class="filter-btn" type="button" aria-expanded="false">
               <span>Services</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">=
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
               </svg>
             </button>
@@ -1129,9 +1134,6 @@ stroke-width:2;
 
  
 </div>
-
-
-
 <script>
 // تفاعل بسيط بدون بناء DOM — يعمل مع الهيكل الحالي تمامًا
 (function () {
@@ -1963,7 +1965,7 @@ function updateBooking(bookingId, newStatus) {
                 alert('❌ ' + data.message);
             }
         } catch (e) {
-            alert('⚠️ خطأ في الرد: ' + xhr.responseText);
+            alert('⚠ خطأ في الرد: ' + xhr.responseText);
         }
     };
     
@@ -2476,7 +2478,7 @@ html,body{
   color:#fff; 
 }
 
-/*Quick Actions Panel*/
+/Quick Actions Panel/
 .qa-wrap{ 
   max-width:1060px; 
   margin:14px auto 24px; 
